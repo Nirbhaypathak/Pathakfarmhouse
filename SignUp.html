@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Sign in</title>
+</head>
+<style>
+    body {
+        background-color: rgb(248, 187, 55);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .lbl_input {
+        width: 100%;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        height: 30px;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+    input[type=radio]
+    {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .btn_submit {
+        width: 100%;
+        background-color: rgb(234, 140, 45);
+        height: 30px;
+    }
+
+    .form_first_div {
+        margin-top: 20px;
+        margin-left: 300px;
+        margin-right: 300px;
+        margin-bottom: 70px;
+        /*background-color: rgb(243, 235, 89);*/
+    }
+</style>
+
+
+<body>
+    <form action="help.php" method="post">
+        <div class="form_first_div">
+            <img style="padding-left:auto; padding-right:10%; height: 120px; width: 750px;" src="images/logo_2.png" alt="logo">
+            <h1 style="text-align: center;">Register</h1>
+            <p style="text-align: center;">Please fill in this form to create an account.</p>
+            <label for="Firstname" class="lbl_input">Firstname:</label>
+            <input type="text" name="Firstname" id="Firstname" placeholder="Enter Firstname" required><br><br>
+            <label for="Lastname" class="lbl_input">Lastname:</label>
+            <input type="text" name="Lastname" id="Lastname" placeholder="Enter Lastname" required><br><br>
+            <label for="Email" class="lbl_input">Email Id:</label>
+            <input type="text" name="Email" id="Email" placeholder="Enter Email id" required><br></br>
+            <label for="Gender" class="lbl_input"> Gender:</label><br>
+            <input type="radio" name="Gender" id="Male" value="M" required>Male
+            <input type="radio" name="Gender"  id="Female" value="F">Female
+            <input type="radio" name="Gender"  id="Other" value="O">Other
+            <br><br>
+            <label for="Password" class="lbl_input"> Password:</label>
+            <input type="password" name="Password" id="Password" placeholder="Enter Password" required><br></br>
+            <label for="Repeat_Password" class="lbl_input">Repeat Password:</label>
+            <input type="password" name="Repeat_Password" id="Repeat_Password" placeholder="Confirm Password"
+                required><br></br>
+            <script>
+                var password = document.getElementById("Password"),
+                    RepeatPassword = document.getElementById("Repeat_Password");
+
+                function validatePassword() {
+                    if (Password.value != RepeatPassword.value) {
+                        RepeatPassword.setCustomValidity("Passwords Don't Match");
+                    } else {
+                        RepeatPassword.setCustomValidity('');
+                    }
+                }
+
+                password.onchange = validatePassword;
+                RepeatPassword.onkeyup = validatePassword;
+            </script><br>
+            <button class="btn btn-outline-success w-100" type="submit">Submit</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label><br><br>
+            <div style="background-color:rgb(248, 187, 55); height: 30px;">
+                <span style="margin:20% 30%;"><a href="http://localhost/nirbhay/bootstrapprj/Signin.html"> Do you have alreay Account?</a></span>
+            </div>
+
+
+        </div>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
